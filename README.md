@@ -1,2 +1,5 @@
 # DataNexus
-DataNexus is a data engineering graduation project developed under the Digital Egypt Pioneers Initiative (DEPI). Built within the Microsoft Data Engineering track to deliver scalable and modern data solutions.
+
+DataNexus is a graduation project developed as part of the Digital Egypt Pioneers Initiative (DEPI) under the Ministry of Communications and Information Technology (MCIT).
+
+This repository represents the initial starting point of the project and will be updated as the project scope and implementation evolve.
