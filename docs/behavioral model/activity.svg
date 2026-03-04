@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 1000" width="520" height="1000">
+  <defs>
+    <marker id="arrDown" markerWidth="8" markerHeight="7" refX="4" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L7,3.5 z" fill="#475569"/>
+    </marker>
+    <marker id="arrGreen" markerWidth="8" markerHeight="7" refX="4" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L7,3.5 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrRed" markerWidth="8" markerHeight="7" refX="4" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L7,3.5 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrYellow" markerWidth="8" markerHeight="7" refX="4" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L7,3.5 z" fill="#ca8a04"/>
+    </marker>
+    <marker id="arrBlue" markerWidth="8" markerHeight="7" refX="4" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L7,3.5 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+
+  <rect width="520" height="1000" fill="white"/>
+
+  <!-- Title -->
+  <text x="260" y="28" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#134e4a">Data Validation — Activity Diagram</text>
+  <text x="260" y="46" text-anchor="middle" font-family="Arial" font-size="10" fill="#64748b">DataNexus  ·  Behavioral Model</text>
+  <line x1="40" y1="54" x2="480" y2="54" stroke="#0d9488" stroke-width="1.5"/>
+
+  <!-- Main flow center x=260 -->
+
+  <!-- START -->
+  <circle cx="260" cy="82" r="13" fill="#0d9488"/>
+  <line x1="260" y1="95" x2="260" y2="115" stroke="#475569" stroke-width="1.6" marker-end="url(#arrDown)"/>
+
+  <!-- Activity: Receive Trigger -->
+  <rect x="140" y="115" width="240" height="46" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.8"/>
+  <text x="260" y="135" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#134e4a">Receive Trigger</text>
+  <text x="260" y="151" text-anchor="middle" font-family="Arial" font-size="9.5" fill="#475569">API / Airflow / CLI / CI/CD</text>
+  <line x1="260" y1="161" x2="260" y2="181" stroke="#475569" stroke-width="1.6" marker-end="url(#arrDown)"/>
+
+  <!-- Activity: Load Config -->
+  <rect x="140" y="181" width="240" height="46" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.8"/>
+  <text x="260" y="201" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#134e4a">Load Validation Config</text>
+  <text x="260" y="217" text-anchor="middle" font-family="Arial" font-size="9.5" fill="#475569">from PostgreSQL</text>
+  <line x1="260" y1="227" x2="260" y2="247" stroke="#475569" stroke-width="1.6" marker-end="url(#arrDown)"/>
+
+  <!-- Decision: Config valid? -->
+  <polygon points="260,247 330,278 260,309 190,278" fill="#fee2e2" stroke="#dc2626" stroke-width="1.8"/>
+  <text x="260" y="274" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626">Config</text>
+  <text x="260" y="289" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626">valid?</text>
+
+  <!-- No → Error (right branch) -->
+  <line x1="330" y1="278" x2="410" y2="278" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="368" y="271" text-anchor="middle" font-family="Arial" font-size="9" fill="#dc2626">no</text>
+  <rect x="410" y="255" width="70" height="46" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="445" y="274" text-anchor="middle" font-family="Arial" font-size="9.5" fill="#dc2626">Log</text>
+  <text x="445" y="288" text-anchor="middle" font-family="Arial" font-size="9.5" fill="#dc2626">Error</text>
+  <!-- error → END right branch (line goes down to end) -->
+  <line x1="445" y1="301" x2="445" y2="940" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="4,3"/>
+  <line x1="445" y1="940" x2="276" y2="940" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrRed)"/>
+
+  <!-- Yes → Profile -->
+  <line x1="260" y1="309" x2="260" y2="329" stroke="#16a34a" stroke-width="1.6" marker-end="url(#arrGreen)"/>
+  <text x="268" y="322" font-family="Arial" font-size="9" fill="#16a34a">yes</text>
+
+  <!-- Activity: Profile Dataset -->
+  <rect x="140" y="329" width="240" height="46" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.8"/>
+  <text x="260" y="349" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#1d4ed8">Profile Dataset</text>
+  <text x="260" y="365" text-anchor="middle" font-family="Arial" font-size="9.5" fill="#475569">nulls · types · distributions</text>
+  <line x1="260" y1="375" x2="260" y2="395" stroke="#475569" stroke-width="1.6" marker-end="url(#arrDown)"/>
+
+  <!-- Loop bracket label -->
+  <rect x="38" y="395" width="84" height="188" rx="5" fill="none" stroke="#c7d2fe" stroke-width="1.3" stroke-dasharray="4,3"/>
+  <text x="80" y="492" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#6366f1" transform="rotate(-90 80 492)">for each rule</text>
+
+  <!-- Activity: Execute Check -->
+  <rect x="140" y="395" width="240" height="46" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.8"/>
+  <text x="260" y="415" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#1d4ed8">Execute Check</text>
+  <text x="260" y="431" text-anchor="middle" font-family="Arial" font-size="9.5" fill="#475569">null / regex / range / unique</text>
+  <line x1="260" y1="441" x2="260" y2="461" stroke="#475569" stroke-width="1.6" marker-end="url(#arrDown)"/>
+
+  <!-- Decision: More rules? -->
+  <polygon points="260,461 330,492 260,523 190,492" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.8"/>
+  <text x="260" y="488" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#1d4ed8">More</text>
+  <text x="260" y="503" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#1d4ed8">rules?</text>
+
+  <!-- Yes → loop back (left side) -->
+  <line x1="190" y1="492" x2="122" y2="492" stroke="#1d4ed8" stroke-width="1.4" stroke-dasharray="5,3"/>
+  <text x="155" y="485" text-anchor="middle" font-family="Arial" font-size="9" fill="#1d4ed8">yes</text>
+  <line x1="122" y1="492" x2="122" y2="418" stroke="#1d4ed8" stroke-width="1.4" stroke-dasharray="5,3"/>
+  <line x1="122" y1="418" x2="140" y2="418" stroke="#1d4ed8" stroke-width="1.4" stroke-dasharray="5,3" marker-end="url(#arrBlue)"/>
+
+  <!-- No → Calculate Score -->
+  <line x1="260" y1="523" x2="260" y2="543" stroke="#16a34a" stroke-width="1.6" marker-end="url(#arrGreen)"/>
+  <text x="268" y="537" font-family="Arial" font-size="9" fill="#16a34a">no</text>
+
+  <!-- Activity: Calculate Score -->
+  <rect x="140" y="543" width="240" height="46" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.8"/>
+  <text x="260" y="563" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#134e4a">Calculate Quality Score</text>
+  <text x="260" y="579" text-anchor="middle" font-family="Arial" font-size="9.5" fill="#475569">aggregate check results</text>
+  <line x1="260" y1="589" x2="260" y2="609" stroke="#475569" stroke-width="1.6" marker-end="url(#arrDown)"/>
+
+  <!-- Activity: Persist Results -->
+  <rect x="140" y="609" width="240" height="46" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.8"/>
+  <text x="260" y="629" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#b45309">Persist Results</text>
+  <text x="260" y="645" text-anchor="middle" font-family="Arial" font-size="9.5" fill="#475569">write to PostgreSQL</text>
+  <line x1="260" y1="655" x2="260" y2="675" stroke="#475569" stroke-width="1.6" marker-end="url(#arrDown)"/>
+
+  <!-- Decision: Score ≥ threshold? -->
+  <polygon points="260,675 345,710 260,745 175,710" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.8"/>
+  <text x="260" y="706" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#0d9488">Score ≥</text>
+  <text x="260" y="721" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#0d9488">threshold?</text>
+
+  <!-- Yes → PASS → End -->
+  <line x1="175" y1="710" x2="118" y2="710" stroke="#16a34a" stroke-width="1.6"/>
+  <text x="145" y="703" text-anchor="middle" font-family="Arial" font-size="9" fill="#16a34a">yes</text>
+  <line x1="118" y1="710" x2="118" y2="940" stroke="#16a34a" stroke-width="1.6"/>
+  <line x1="118" y1="940" x2="244" y2="940" stroke="#16a34a" stroke-width="1.6" marker-end="url(#arrGreen)"/>
+  <text x="80" y="830" text-anchor="middle" font-family="Arial" font-size="9" fill="#16a34a" transform="rotate(-90 80 830)">status = PASS</text>
+
+  <!-- No → Alert Manager -->
+  <line x1="260" y1="745" x2="260" y2="765" stroke="#ca8a04" stroke-width="1.6" marker-end="url(#arrYellow)"/>
+  <text x="268" y="758" font-family="Arial" font-size="9" fill="#ca8a04">no</text>
+
+  <!-- Activity: Trigger Alert Manager -->
+  <rect x="140" y="765" width="240" height="46" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.8"/>
+  <text x="260" y="785" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#d97706">Trigger Alert Manager</text>
+  <text x="260" y="801" text-anchor="middle" font-family="Arial" font-size="9.5" fill="#475569">evaluate severity</text>
+  <line x1="260" y1="811" x2="260" y2="831" stroke="#475569" stroke-width="1.6" marker-end="url(#arrDown)"/>
+
+  <!-- Activity: Send Notifications -->
+  <rect x="140" y="831" width="240" height="46" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.8"/>
+  <text x="260" y="851" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#d97706">Send Notifications</text>
+  <text x="260" y="867" text-anchor="middle" font-family="Arial" font-size="9.5" fill="#475569">Email / Slack  ·  status = FAIL</text>
+  <line x1="260" y1="877" x2="260" y2="927" stroke="#475569" stroke-width="1.6" marker-end="url(#arrDown)"/>
+
+  <!-- END -->
+  <circle cx="260" cy="952" r="12" fill="white" stroke="#134e4a" stroke-width="2.5"/>
+  <circle cx="260" cy="952" r="7" fill="#134e4a"/>
+
+  <!-- ═══ LEGEND ═══ -->
+  <rect x="35" y="966" width="450" height="22" rx="4" fill="white" stroke="#e2e8f0"/>
+  <rect x="50"  y="972" width="40" height="10" rx="3" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="96"  y="981" font-family="Arial" font-size="8.5" fill="#475569">validation step</text>
+  <rect x="160" y="972" width="40" height="10" rx="3" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.2"/>
+  <text x="206" y="981" font-family="Arial" font-size="8.5" fill="#475569">flow step</text>
+  <rect x="276" y="972" width="40" height="10" rx="3" fill="#fffbeb" stroke="#d97706" stroke-width="1.2"/>
+  <text x="322" y="981" font-family="Arial" font-size="8.5" fill="#475569">alert step</text>
+  <rect x="383" y="972" width="40" height="10" rx="3" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>
+  <text x="429" y="981" font-family="Arial" font-size="8.5" fill="#475569">error path</text>
+</svg>
