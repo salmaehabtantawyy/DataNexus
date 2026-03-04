@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 780" width="1080" height="780">
+  <defs>
+    <marker id="arrSolid" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L8,3.5 z" fill="#1e293b"/>
+    </marker>
+    <marker id="arrReturn" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L8,3.5 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrAlert" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L8,3.5 z" fill="#d97706"/>
+    </marker>
+    <marker id="arrGreen" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L8,3.5 z" fill="#0d9488"/>
+    </marker>
+    <!-- self-loop arrow (upward) -->
+    <marker id="arrSelf" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L6,3.5 z" fill="#1e293b"/>
+    </marker>
+  </defs>
+
+  <rect width="1080" height="780" fill="white"/>
+
+  <!-- Title -->
+  <text x="540" y="28" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#134e4a">Validation Run — Sequence Diagram</text>
+  <text x="540" y="47" text-anchor="middle" font-family="Arial" font-size="11" fill="#64748b">DataNexus  ·  Behavioral Model  ·  7 Participants</text>
+  <line x1="30" y1="56" x2="1050" y2="56" stroke="#0d9488" stroke-width="1.5"/>
+
+  <!-- ═══ PARTICIPANT X POSITIONS ═══
+       P0=Trigger   x=80
+       P1=Flask API x=220
+       P2=Airflow   x=380
+       P3=Profiler  x=530
+       P4=Validator x=670
+       P5=AlertMgr  x=820
+       P6=PostgreSQL x=980
+  -->
+
+  <!-- Participant boxes -->
+  <!-- P0: Trigger -->
+  <rect x="20"  y="66" width="120" height="54" rx="6" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.8"/>
+  <text x="80"  y="86"  text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#0d9488">Trigger</text>
+  <text x="80"  y="100" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#475569">User / Airflow</text>
+  <text x="80"  y="112" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#475569">CI/CD / CLI</text>
+
+  <!-- P1: Flask API -->
+  <rect x="160" y="66" width="120" height="54" rx="6" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.8"/>
+  <text x="220" y="88"  text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#1d4ed8">Flask</text>
+  <text x="220" y="103" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#475569">REST API</text>
+  <text x="220" y="116" text-anchor="middle" font-family="Arial" font-size="8" fill="#94a3b8">:5000</text>
+
+  <!-- P2: Airflow -->
+  <rect x="320" y="66" width="120" height="54" rx="6" fill="#f5f3ff" stroke="#6d28d9" stroke-width="1.8"/>
+  <text x="380" y="88"  text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#6d28d9">Airflow</text>
+  <text x="380" y="103" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#475569">DAG</text>
+  <text x="380" y="116" text-anchor="middle" font-family="Arial" font-size="8" fill="#94a3b8">validation_dag.py</text>
+
+  <!-- P3: Profiler -->
+  <rect x="470" y="66" width="120" height="54" rx="6" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.8"/>
+  <text x="530" y="88"  text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#0d9488">Data</text>
+  <text x="530" y="103" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#0d9488">Profiler</text>
+  <text x="530" y="116" text-anchor="middle" font-family="Arial" font-size="8" fill="#94a3b8">profiler.py</text>
+
+  <!-- P4: Validator -->
+  <rect x="610" y="66" width="120" height="54" rx="6" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.8"/>
+  <text x="670" y="88"  text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#0d9488">Validation</text>
+  <text x="670" y="103" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#0d9488">Engine</text>
+  <text x="670" y="116" text-anchor="middle" font-family="Arial" font-size="8" fill="#94a3b8">validator.py</text>
+
+  <!-- P5: Alert Manager -->
+  <rect x="760" y="66" width="120" height="54" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1.8"/>
+  <text x="820" y="88"  text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#d97706">Alert</text>
+  <text x="820" y="103" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#d97706">Manager</text>
+  <text x="820" y="116" text-anchor="middle" font-family="Arial" font-size="8" fill="#94a3b8">alerts.py</text>
+
+  <!-- P6: PostgreSQL -->
+  <rect x="920" y="66" width="120" height="54" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="1.8"/>
+  <text x="980" y="88"  text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#b45309">PostgreSQL</text>
+  <text x="980" y="103" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#475569">Primary Store</text>
+  <text x="980" y="116" text-anchor="middle" font-family="Arial" font-size="8" fill="#94a3b8">:5432</text>
+
+  <!-- ═══ LIFELINES ═══ -->
+  <line x1="80"  y1="120" x2="80"  y2="746" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,4"/>
+  <line x1="220" y1="120" x2="220" y2="746" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,4"/>
+  <line x1="380" y1="120" x2="380" y2="746" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,4"/>
+  <line x1="530" y1="120" x2="530" y2="746" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,4"/>
+  <line x1="670" y1="120" x2="670" y2="746" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,4"/>
+  <line x1="820" y1="120" x2="820" y2="746" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,4"/>
+  <line x1="980" y1="120" x2="980" y2="746" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,4"/>
+
+  <!-- ═══ ACTIVATION BARS ═══ -->
+  <!-- P0 active: 148–182 -->
+  <rect x="74"  y="148" width="12" height="34"  rx="2" fill="#0d9488" opacity="0.25" stroke="#0d9488" stroke-width="1"/>
+  <!-- P1 active: 148–700 -->
+  <rect x="214" y="148" width="12" height="552" rx="2" fill="#1d4ed8" opacity="0.2" stroke="#1d4ed8" stroke-width="1"/>
+  <!-- P2 active: 182–668 -->
+  <rect x="374" y="182" width="12" height="486" rx="2" fill="#6d28d9" opacity="0.2" stroke="#6d28d9" stroke-width="1"/>
+  <!-- P3 active: 216–282 -->
+  <rect x="524" y="216" width="12" height="66"  rx="2" fill="#0d9488" opacity="0.2" stroke="#0d9488" stroke-width="1"/>
+  <!-- P4 active: 316–450 -->
+  <rect x="664" y="316" width="12" height="134" rx="2" fill="#0d9488" opacity="0.2" stroke="#0d9488" stroke-width="1"/>
+  <!-- P5 active: 484–568 -->
+  <rect x="814" y="484" width="12" height="84"  rx="2" fill="#d97706" opacity="0.2" stroke="#d97706" stroke-width="1"/>
+  <!-- P6 active: 148–668 -->
+  <rect x="974" y="148" width="12" height="520" rx="2" fill="#b45309" opacity="0.15" stroke="#b45309" stroke-width="1"/>
+
+  <!-- ═══ MESSAGES ═══ -->
+
+  <!-- Divider: async boundary -->
+  <line x1="44" y1="192" x2="1040" y2="192" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="48" y="188" font-family="Arial" font-size="8" fill="#94a3b8" font-style="italic">async — Airflow DAG executes independently</text>
+
+  <!-- 1. Trigger → Flask: POST /api/validations/:id/run -->
+  <line x1="92" y1="152" x2="214" y2="152" stroke="#1e293b" stroke-width="1.7" marker-end="url(#arrSolid)"/>
+  <text x="152" y="146" text-anchor="middle" font-family="Arial" font-size="9" fill="#1e293b">POST /api/validations/:id/run</text>
+
+  <!-- 2. Flask self: validate request -->
+  <path d="M226,168 Q252,168 252,176 Q252,184 226,184" fill="none" stroke="#1e293b" stroke-width="1.4" marker-end="url(#arrSelf)"/>
+  <text x="258" y="178" font-family="Arial" font-size="8.5" fill="#475569">validate request &amp; auth</text>
+
+  <!-- 3. Flask → Trigger: 202 Accepted -->
+  <line x1="214" y1="196" x2="92" y2="196" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="5,3" marker-end="url(#arrReturn)"/>
+  <text x="152" y="190" text-anchor="middle" font-family="Arial" font-size="9" fill="#94a3b8">202 Accepted</text>
+
+  <!-- 4. Flask → Airflow: trigger DAG -->
+  <line x1="226" y1="216" x2="374" y2="216" stroke="#1e293b" stroke-width="1.7" marker-end="url(#arrSolid)"/>
+  <text x="300" y="210" text-anchor="middle" font-family="Arial" font-size="9" fill="#1e293b">trigger DAG</text>
+
+  <!-- 5. Airflow → Profiler: profile_data() -->
+  <line x1="386" y1="240" x2="524" y2="240" stroke="#1e293b" stroke-width="1.7" marker-end="url(#arrSolid)"/>
+  <text x="454" y="234" text-anchor="middle" font-family="Arial" font-size="9" fill="#1e293b">profile_data()</text>
+
+  <!-- 6. Profiler → PostgreSQL: save profile -->
+  <line x1="536" y1="258" x2="974" y2="258" stroke="#0d9488" stroke-width="1.5" marker-end="url(#arrGreen)"/>
+  <text x="756" y="252" text-anchor="middle" font-family="Arial" font-size="9" fill="#0d9488">save profile</text>
+
+  <!-- 7. PostgreSQL → Profiler: ok -->
+  <line x1="974" y1="274" x2="536" y2="274" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrReturn)"/>
+  <text x="756" y="269" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#94a3b8">ok</text>
+
+  <!-- 8. Airflow → Validator: run_validations() -->
+  <line x1="386" y1="316" x2="664" y2="316" stroke="#1e293b" stroke-width="1.7" marker-end="url(#arrSolid)"/>
+  <text x="524" y="310" text-anchor="middle" font-family="Arial" font-size="9" fill="#1e293b">run_validations()</text>
+
+  <!-- 9. Validator self: apply rules -->
+  <path d="M676,332 Q704,332 704,342 Q704,352 676,352" fill="none" stroke="#1e293b" stroke-width="1.4" marker-end="url(#arrSelf)"/>
+  <text x="710" y="344" font-family="Arial" font-size="8.5" fill="#475569">apply YAML rules</text>
+
+  <!-- 10. Validator → PostgreSQL: write results -->
+  <line x1="676" y1="370" x2="974" y2="370" stroke="#0d9488" stroke-width="1.5" marker-end="url(#arrGreen)"/>
+  <text x="826" y="364" text-anchor="middle" font-family="Arial" font-size="9" fill="#0d9488">write results</text>
+
+  <!-- 11. PostgreSQL → Validator: ok -->
+  <line x1="974" y1="386" x2="676" y2="386" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrReturn)"/>
+  <text x="826" y="381" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#94a3b8">ok</text>
+
+  <!-- 12. Validator → Airflow: quality_score -->
+  <line x1="664" y1="450" x2="386" y2="450" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrReturn)"/>
+  <text x="524" y="444" text-anchor="middle" font-family="Arial" font-size="9" fill="#94a3b8">quality_score</text>
+
+  <!-- optional band label -->
+  <rect x="30" y="466" width="188" height="16" rx="3" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
+  <text x="124" y="478" text-anchor="middle" font-family="Arial" font-size="8" fill="#d97706">[if score &lt; threshold]</text>
+
+  <!-- 13. Airflow → AlertMgr: send_alerts() -->
+  <line x1="386" y1="490" x2="814" y2="490" stroke="#d97706" stroke-width="1.7" marker-end="url(#arrAlert)"/>
+  <text x="600" y="484" text-anchor="middle" font-family="Arial" font-size="9" fill="#d97706">send_alerts()</text>
+
+  <!-- 14. AlertMgr self: evaluate severity -->
+  <path d="M826,506 Q856,506 856,516 Q856,526 826,526" fill="none" stroke="#d97706" stroke-width="1.4" marker-end="url(#arrAlert)"/>
+  <text x="862" y="518" font-family="Arial" font-size="8.5" fill="#d97706">evaluate severity</text>
+
+  <!-- 15. AlertMgr → PostgreSQL: log alert -->
+  <line x1="826" y1="544" x2="974" y2="544" stroke="#d97706" stroke-width="1.5" marker-end="url(#arrAlert)"/>
+  <text x="900" y="538" text-anchor="middle" font-family="Arial" font-size="9" fill="#d97706">log alert</text>
+
+  <!-- 16. AlertMgr → Airflow: dispatched -->
+  <line x1="814" y1="570" x2="386" y2="570" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrReturn)"/>
+  <text x="600" y="564" text-anchor="middle" font-family="Arial" font-size="9" fill="#94a3b8">alerts dispatched</text>
+
+  <!-- 17. Airflow → PostgreSQL: persist_results() -->
+  <line x1="386" y1="608" x2="974" y2="608" stroke="#1e293b" stroke-width="1.7" marker-end="url(#arrSolid)"/>
+  <text x="680" y="602" text-anchor="middle" font-family="Arial" font-size="9" fill="#1e293b">persist_results()</text>
+
+  <!-- 18. PostgreSQL → Airflow: ok -->
+  <line x1="974" y1="626" x2="386" y2="626" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrReturn)"/>
+  <text x="680" y="621" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#94a3b8">ok</text>
+
+  <!-- 19. Airflow → Flask: run complete -->
+  <line x1="374" y1="668" x2="226" y2="668" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrReturn)"/>
+  <text x="300" y="662" text-anchor="middle" font-family="Arial" font-size="9" fill="#94a3b8">run complete</text>
+
+  <!-- 20. Flask → Trigger: result (poll) -->
+  <line x1="214" y1="700" x2="92" y2="700" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrReturn)"/>
+  <text x="152" y="694" text-anchor="middle" font-family="Arial" font-size="9" fill="#94a3b8">GET /runs/:id → PASS / FAIL</text>
+
+  <!-- ═══ LEGEND ═══ -->
+  <rect x="30" y="748" width="1020" height="22" rx="4" fill="white" stroke="#e2e8f0"/>
+  <line x1="48"  y1="759" x2="78"  y2="759" stroke="#1e293b" stroke-width="1.7" marker-end="url(#arrSolid)"/>
+  <text x="84"  y="763" font-family="Arial" font-size="8.5" fill="#475569">call / request</text>
+  <line x1="184" y1="759" x2="214" y2="759" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrReturn)"/>
+  <text x="220" y="763" font-family="Arial" font-size="8.5" fill="#475569">return / response</text>
+  <line x1="360" y1="759" x2="390" y2="759" stroke="#0d9488" stroke-width="1.5" marker-end="url(#arrGreen)"/>
+  <text x="396" y="763" font-family="Arial" font-size="8.5" fill="#475569">database write</text>
+  <line x1="514" y1="759" x2="544" y2="759" stroke="#d97706" stroke-width="1.7" marker-end="url(#arrAlert)"/>
+  <text x="550" y="763" font-family="Arial" font-size="8.5" fill="#475569">alert dispatch</text>
+  <rect x="658" y="753" width="14" height="10" rx="1" fill="#1d4ed8" opacity="0.2" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="677" y="763" font-family="Arial" font-size="8.5" fill="#475569">active (executing)</text>
+  <rect x="800" y="753" width="120" height="12" rx="3" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
+  <text x="860" y="763" text-anchor="middle" font-family="Arial" font-size="8" fill="#d97706">[opt] conditional block</text>
+</svg>
