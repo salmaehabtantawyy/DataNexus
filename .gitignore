@@ -1,0 +1,140 @@
+# ─────────────────────────────────────────────────────────────
+#  DataNexus — .gitignore
+# ─────────────────────────────────────────────────────────────
+
+# ── Secrets — NEVER commit these ─────────────────────────────
+.env
+.envrc
+
+# ── Python ────────────────────────────────────────────────────
+__pycache__/
+*.py[codz]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.spec
+
+# ── Virtual environments ──────────────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.pixi/
+__pypackages__/
+
+# ── Testing & coverage ────────────────────────────────────────
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py.cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# ── Alembic ───────────────────────────────────────────────────
+# Migration files are committed — do NOT ignore migrations/
+# Only ignore the compiled cache
+migrations/__pycache__/
+migrations/versions/__pycache__/
+
+# ── Great Expectations ────────────────────────────────────────
+great_expectations/uncommitted/
+great_expectations/.ge_store_backend_id
+
+# ── Apache Airflow ────────────────────────────────────────────
+logs/
+airflow.db
+airflow.cfg
+standalone_admin_password.txt
+airflow/logs/
+dags/__pycache__/
+dags/operators/__pycache__/
+
+# ── Data files — never commit raw data ───────────────────────
+*.csv
+*.parquet
+*.xlsx
+*.json.gz
+data/
+datasets/
+
+# ── Docker ────────────────────────────────────────────────────
+# Commit docker-compose.yml — it is part of the project
+# Only ignore the local override file (personal port changes etc.)
+docker-compose.override.yml
+.docker/
+
+# ── IDEs & editors ────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-workspace
+
+# ── OS files ──────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V3
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ── Logs ──────────────────────────────────────────────────────
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
+local_settings.py
+
+# ── Type checkers & linters ───────────────────────────────────
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# ── Jupyter ───────────────────────────────────────────────────
+.ipynb_checkpoints
+*.ipynb
+
+# ── Misc ──────────────────────────────────────────────────────
+.pypirc
+.abstra/
+.cursorignore
+.cursorindexingignore
+marimo/_static/
+marimo/_lsp/
+__marimo__/

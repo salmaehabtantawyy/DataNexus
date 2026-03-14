@@ -1,31 +1,54 @@
-# Core
-pandas==2.2.3
-sqlalchemy==2.0.36
-psycopg2-binary==2.9.10
-alembic==1.14.0
-python-dotenv==1.0.1
+# ─────────────────────────────────────────────────────────────
+#  DataNexus — Python Dependencies
+# ─────────────────────────────────────────────────────────────
 
-# Validation
-great-expectations==1.14.0
-pyyaml==6.0.2
+# ── Step 2: Database ──────────────────────────────────────────
+sqlalchemy==2.0.36          # ORM — defines tables as Python classes
+alembic==1.13.3             # migration tool — versioned schema changes
+psycopg2-binary==2.9.10     # PostgreSQL driver for SQLAlchemy
+python-dotenv==1.0.0        # loads .env file into os.environ
 
-# API
-flask==3.1.0
-flask-cors==5.0.0
+# ── Step 3: Data Profiler ─────────────────────────────────────
+pandas==2.2.3               # tabular data — DataFrame operations
+numpy==1.26.4               # numerical operations used by pandas
 
-# CLI
-click==8.1.8
+# ── Step 4: Config Parser ─────────────────────────────────────
+pyyaml==6.0.1               # reads YAML validation config files
+pydantic==2.10.6            # validates config structure with type hints
 
-# Dashboard
-streamlit==1.41.1
-plotly==5.24.1
+# ── Step 5: Validation Engine ─────────────────────────────────
+# (uses sqlalchemy + pandas from above — no new packages)
 
-# Alerts
-requests==2.32.3
+# ── Step 6: Great Expectations Adapter ───────────────────────
+great-expectations==0.18.8  # validation rule engine
 
-# Testing
-pytest==8.3.4
-pytest-cov==6.0.0
+# ── Step 7: Alert Manager ─────────────────────────────────────
+requests==2.31.0            # HTTP calls — Slack webhook POST
 
-# Code Quality
-flake8==7.1.1
+# ── Step 8: REST API ──────────────────────────────────────────
+flask==3.0.0                # REST API framework
+flask-cors==4.0.0           # allow dashboard to call API cross-origin
+
+# ── Step 9: CLI ───────────────────────────────────────────────
+click==8.1.7                # command-line interface builder
+rich==13.7.0                # pretty terminal output (tables, colours)
+
+# ── Step 10: Dashboard ────────────────────────────────────────
+streamlit==1.41.1           # web dashboard — Python only, no JS
+plotly==5.18.0              # interactive charts used by Streamlit
+
+# ── Step 11: Airflow (install separately — see note below) ───
+# apache-airflow is NOT listed here because it has hundreds of
+# transitive dependencies that conflict with a standard venv.
+# Install it in its own environment or via Docker Compose (Step 13).
+
+# ── Step 12: Testing ──────────────────────────────────────────
+pytest==7.4.3               # test runner
+pytest-cov==4.1.0           # coverage reporting
+pytest-mock==3.12.0         # mocking utilities
+pytest-asyncio==0.21.1      # async test support
+
+# ── Code quality ──────────────────────────────────────────────
+black==23.10.0              # code formatter
+flake8==6.1.0               # linting
+mypy==1.6.1                 # static type checking
