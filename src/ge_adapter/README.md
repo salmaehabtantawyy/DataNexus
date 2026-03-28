@@ -206,4 +206,3 @@ print(result)
 ---
 
 *Built by: Salma Ehab — Step 6, DataNexus DEPI 2026*
-*Updated after code review — fixes applied by Ahmed M. Fayad*
